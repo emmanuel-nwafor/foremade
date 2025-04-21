@@ -279,6 +279,19 @@
 
     healthBeautyGrid.innerHTML = healthBeautyCards;
 
+        // Render Home & Kitchen Section
+        const homeKitchenGrid = document.getElementById('home-kitchen-grid');
+
+        const homeKitchenCards = homeKitchenCards.map(item => `
+          <div class="bg-white rounded-lg p-2 flex flex-col items-center snap-start min-w-[180px] lg:min-w-[220px]">
+            <img src="${item.image}" alt="${item.name}" class="w-full h-32 object-cover mb-2">
+            <p class="text-sm text-gray-800 text-center font-bold uppercase mb-1">${item.name}</p>
+            <p class="text-gray-800 font-semibold">₦${item.price}</p>
+          </div>
+        `).join('');
+    
+        homeKitchenGrid.innerHTML = homeKitchenCards;
+
     // Carousel Navigation for Top Rated Products
     const topRatedPrev = document.getElementById('top-rated-prev');
     const topRatedNext = document.getElementById('top-rated-next');
@@ -287,13 +300,17 @@
     const healthBeautyPrev = document.getElementById('health-beauty-prev');
     const healthBeautyNext = document.getElementById('health-beauty-next');
 
+    // Carousel Navigation for Home & Kitchen
+    const HomeKitchenPrev = document.getElementById('hoome-kitchen-prev');
+    const HomeKitchenNext = document.getElementById('home-kitchen-next');
+
     // Function to update button states (disable when at start/end)
     function updateButtonStates(grid, prevButton, nextButton) {
       const scrollLeft = grid.scrollLeft;
       const maxScrollLeft = grid.scrollWidth - grid.clientWidth;
 
       prevButton.disabled = scrollLeft <= 0;
-      nextButton.disabled = scrollLeft >= maxScrollLeft - 1; // -1 to account for small rounding errors
+      nextButton.disabled = scrollLeft >= maxScrollLeft - 1; 
     }
 
     // Function to calculate scroll amount based on screen size

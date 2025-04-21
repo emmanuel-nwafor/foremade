@@ -16,13 +16,15 @@
     * {
         font-family: "Poppins", sans-serif;
     }
-    /* Hide scrollbar for cross-browser compatibility */
+    html {
+        scroll-behavior: smooth;
+    }
     .hide-scrollbar {
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;
+        scrollbar-width: none; 
     }
     .hide-scrollbar::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, and Opera */
+        display: none;
     }
 </style>
 <body class="bg-[#F5F5F5]" id="home">
@@ -379,6 +381,28 @@
         <i class='bx bx-chevron-left'></i>
       </button>
       <button id="health-beauty-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-300 text-gray-800 p-2 rounded-full hover:bg-gray-400 disabled:bg-gray-200 disabled:cursor-not-allowed">
+        <i class='bx bx-chevron-right'></i>
+      </button>
+    </div>
+  </section>
+
+    <!-- Home & Kitchen Section -->
+  <section class="container mx-auto px-4 py-8">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-xl sm:text-2xl font-bold text-gray-800">Home & Kitchen</h2>
+      <a href="#" class="text-blue-600 hover:text-blue-800 text-sm sm:text-base flex items-center">
+        View All
+        <i class='bx bx-chevron-right ml-1'></i>
+      </a>
+    </div>
+    <div class="relative">
+      <div id="home-kitchen-grid" class="flex flex-nowrap gap-4 overflow-x-auto snap-x snap-mandatory hide-scrollbar">
+        <!-- Product cards will be dynamically inserted here -->
+      </div>
+      <button id="home-kitchen-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-300 text-gray-800 p-2 rounded-full hover:bg-gray-400 disabled:bg-gray-200 disabled:cursor-not-allowed">
+        <i class='bx bx-chevron-left'></i>
+      </button>
+      <button id="home-kitchen-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-300 text-gray-800 p-2 rounded-full hover:bg-gray-400 disabled:bg-gray-200 disabled:cursor-not-allowed">
         <i class='bx bx-chevron-right'></i>
       </button>
     </div>
