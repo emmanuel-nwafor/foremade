@@ -42,3 +42,6 @@ const items = [
         price: "TBD",
     }
 ];
+
+// Expose the items array globally by attaching it to the window object
+window.items = items;
