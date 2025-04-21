@@ -1,0 +1,287 @@
+<!-- Updated Foremade homepage with responsive mobile design, removed Naira text, full-width rounded search bar/button, and text-sm on tablets -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foremade</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Boxicons CDN -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- Font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Oi&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        font-family: "Poppins", sans-serif;
+    }
+</style>
+<body class="font-poppins">
+  <!-- Header -->
+  <header class="bg-white shadow-sm">
+    <!-- Top Bar -->
+    <div class="bg-gray-800 text-white text-xs sm:text-sm py-2">
+      <div class="container mx-auto px-4 flex flex-wrap justify-between items-center">
+        <div class="flex items-center">
+          <i class='bx bx-phone mr-2'></i>
+          <span>+2349126866984</span>
+        </div>
+        <div class="flex items-center space-x-4 mt-2 sm:mt-0">
+          <div class="flex items-center">
+            <img src="https://flagcdn.com/16x12/gb.png" alt="UK Flag" class="mr-1">
+            <span>English</span>
+            <i class='bx bx-chevron-down ml-1'></i>
+          </div>
+          <a href="#" class="hover:text-blue-300">Start Selling</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img src="logo2.png" class="h-12" alt="foremade">
+      </div>
+
+      <!-- Hamburger Menu for Mobile -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-gray-600 focus:outline-none">
+          <i class='bx bx-menu text-2xl'></i>
+        </button>
+      </div>
+
+          <!-- Search Bar (Visible on Desktop) -->
+       <div class="container mx-auto px-4 py-2 hidden md:flex items-center space-x-4">
+          <div class="flex w-full max-w-2xl">
+            <select class="border border-gray-300 rounded-full p-7 text-xs md:text-sm lg:text-base focus:outline-none">
+                <option>All Categories</option>
+                <option>Electronics</option>
+                <option>Fashion</option>
+            </select>
+            <div class="relative flex-1 mx-2">
+                <input type="text" placeholder="Search for items..." class="w-full border border-gray-300 rounded-full px-3 py-2 text-xs md:text-sm lg:text-base focus:outline-none">
+            </div>
+            <button class="bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-700">
+                <i class='bx bx-search'></i>
+            </button>
+          </div>
+      </div>
+
+      <!-- Cart Icon -->
+      <div class="flex items-center space-x-4">
+        <i id="search-toggle" class="bx bx-search text-gray-600 text-2xl cursor-pointer md:hidden"></i>
+        <i class='bx bx-cart-alt text-gray-600 text-2xl'></i>
+      </div>
+    </div>
+
+    <!-- Sidebar for Mobile -->
+    <div id="sidebar" class="fixed inset-y-0 left-0 w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 md:hidden z-50">
+      <div class="flex justify-between items-center p-4 border-b">
+        <h2 class="text-lg font-bold">Menu</h2>
+        <button id="close-sidebar" class="text-gray-600 focus:outline-none">
+          <i class='bx bx-x text-2xl'></i>
+        </button>
+      </div>
+      <div class="mt-5">
+        <!-- Search Bar in Sidebar for Mobile/Tablet -->
+        <div class="flex w-full md:hidden">
+          <div class="relative flex-1 mx-2">
+            <input type="text" placeholder="Search for items..." class="w-full border border-gray-300 rounded-full p-4 text-xs sm:text-sm focus:outline-none">
+            <i class='bx bx-search absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600'></i>
+          </div>
+        </div>
+      </div>
+      <nav class="flex flex-col p-4 space-y-2 text-xs sm:text-sm text-gray-600">
+        <a href="#" class="hover:text-blue-600">Welcome! Log in or sign up</a>
+        <a href="#" class="hover:text-blue-600">Hot Deals</a>
+        <a href="#" class="hover:text-blue-600">Premium Brands</a>
+        <a href="#" class="hover:text-blue-600">Gift Vouchers</a>
+        <a href="#" class="hover:text-blue-600">Support Center</a>
+        <a href="#" class="hover:text-blue-600">Delivery Options</a>
+        <a href="#" class="hover:text-blue-600">Start Selling</a>
+        <a href="#" class="hover:text-blue-600">Favorites</a>
+        <a href="#" class="hover:text-blue-600">My Account</a>
+      </nav>
+    </div>
+
+    <!-- Category Links -->
+    <div class="container mx-auto px-4 py-2">
+      <hr class="m-2">
+      <!-- Dropdown for max-md devices -->
+      <div class="md:hidden">
+        <select id="category-dropdown" class="w-full border border-gray-300 rounded px-2 py-1 text-xs sm:text-sm text-gray-600 focus:outline-none">
+          <option value="" disabled selected>Select a Category</option>
+          <option value="home">Home</option>
+          <option value="stores">Stores</option>
+          <option value="brands">Brands</option>
+        </select>
+      </div>
+      <!-- Navigation Links (Hidden on Mobile, Visible on Desktop/Tablet) -->
+      <nav class="hidden md:flex flex-wrap items-center space-x-4 text-xs md:text-sm lg:text-base text-gray-600">
+        <a href="#" class="hover:text-blue-600 text-sm">Welcome! Log in or sign up</a>
+        <a href="#" class="hover:text-blue-600 text-sm">Hot Deals</a>
+        <a href="#" class="hover:text-blue-600 text-sm">Premium Brands</a>
+        <a href="#" class="hover:text-blue-600 text-sm">Gift Vouchers</a>
+        <a href="#" class="hover:text-blue-600 text-sm">Support Center</a>
+        <a href="#" class="hover:text-blue-600 text-sm">Delivery Options</a>
+        <a href="#" class="hover:text-blue-600 text-sm">Start Selling</a>
+        <a href="#" class="hover:text-blue-600 text-sm">Favorites</a>
+        <a href="#" class="hover:text-blue-600 text-sm">My Account</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section with Full-Width Carousel -->
+  <section class="relative h-96 sm:h-[400px] w-full">
+    <!-- Carousel-1 -->
+    <div id="carousel-slide-0" class="absolute inset-0 opacity-100 transition-opacity duration-1000">
+      <div class="relative w-full h-full">
+        <img src="hero-bg-1.jpg" alt="Slide 1" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="absolute top-0 left-0 w-full h-full flex items-center">
+          <div class="container mx-auto px-4">
+            <div class="text-white max-w-lg text-left">
+              <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-2">Discover Support Tailored for You</h2>
+              <p class="mb-4">Explore solutions for shipping, returns, and more.</p>
+              <button class="bg-white text-gray-800 px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100">Get Started</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Carousel-2 -->
+    <div id="carousel-slide-1" class="absolute inset-0 opacity-0 transition-opacity duration-1000">
+      <div class="relative w-full h-full">
+        <img src="hero-bg-2.jpg" alt="Slide 2" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="absolute top-0 left-0 w-full h-full flex items-center">
+          <div class="container mx-auto px-4">
+            <div class="text-white max-w-lg text-left">
+              <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-2">Hassle-Free Returns</h2>
+              <p class="mb-4">Simplify your shopping with easy return options.</p>
+              <button class="bg-white text-gray-800 px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100">Get Started</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Carousel-3 -->
+    <div id="carousel-slide-2" class="absolute inset-0 opacity-0 transition-opacity duration-1000">
+      <div class="relative w-full h-full">
+        <img src="hero-bg-3.jpg" alt="Slide 3" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="absolute top-0 left-0 w-full h-full flex items-center">
+          <div class="container mx-auto px-4">
+            <div class="text-white max-w-lg text-left">
+              <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-2">Shop with Confidence</h2>
+              <p class="mb-4">Enjoy seamless support for all your purchases.</p>
+              <button class="bg-white text-gray-800 px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100">Get Started</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Carousel Dots -->
+    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <span id="dot-0" class="h-3 w-3 bg-white rounded-full opacity-70 cursor-pointer"></span>
+      <span id="dot-1" class="h-3 w-3 bg-white rounded-full opacity-70 cursor-pointer"></span>
+      <span id="dot-2" class="h-3 w-3 bg-white rounded-full opacity-70 cursor-pointer"></span>
+    </div>
+  </section>
+
+  <!-- Popular Categories Section -->
+  <section class="container mx-auto px-4 py-8">
+    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">Discover Top Categories</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div class="bg-gray-200 h-32 flex items-center justify-center">
+        <p class="text-gray-600">[Category Placeholder]</p>
+      </div>
+      <div class="bg-gray-200 h-32 flex items-center justify-center">
+        <p class="text-gray-600">[Category Placeholder]</p>
+      </div>
+      <div class="bg-gray-200 h-32 flex items-center justify-center">
+        <p class="text-gray-600">[Category Placeholder]</p>
+      </div>
+      <div class="bg-gray-200 h-32 flex items-center justify-center">
+        <p class="text-gray-600">[Category Placeholder]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript for Sidebar Toggle, Carousel, and Category Dropdown -->
+  <script>
+    // Sidebar Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const closeSidebar = document.getElementById('close-sidebar');
+    const searchToggle = document.getElementById('search-toggle');
+    const sidebar = document.getElementById('sidebar');
+
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('-translate-x-full');
+    });
+
+    closeSidebar.addEventListener('click', () => {
+      sidebar.classList.add('-translate-x-full');
+    });
+
+    searchToggle.addEventListener('click', () => {
+      sidebar.classList.remove('-translate-x-full');
+      const searchInput = sidebar.querySelector('input[type="text"]');
+      searchInput.focus();
+    });
+
+    // Carousel Logic
+    const slides = [
+      document.getElementById('carousel-slide-0'),
+      document.getElementById('carousel-slide-1'),
+      document.getElementById('carousel-slide-2'),
+    ];
+    const dots = [
+      document.getElementById('dot-0'),
+      document.getElementById('dot-1'),
+      document.getElementById('dot-2'),
+    ];
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('opacity-100', i === index);
+        slide.classList.toggle('opacity-0', i !== index);
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('bg-white', i === index);
+        dot.classList.toggle('bg-gray-400', i !== index);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    // Auto-slide every 5 seconds
+    setInterval(nextSlide, 5000);
+
+    // Manual slide on dot click
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentSlide = index;
+        showSlide(currentSlide);
+      });
+    });
+
+    // Initial slide
+    showSlide(currentSlide);
+
+    // Category Dropdown Navigation
+    const categoryDropdown = document.getElementById('category-dropdown');
+    categoryDropdown.addEventListener('change', (e) => {
+      if (e.target.value) {
+        window.location.href = `#${e.target.value}`;
+      }
+    });
+  </script>
+</body>
+</html>
