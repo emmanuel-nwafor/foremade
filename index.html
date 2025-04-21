@@ -16,6 +16,14 @@
     * {
         font-family: "Poppins", sans-serif;
     }
+    /* Hide scrollbar for cross-browser compatibility */
+    .hide-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, and Opera */
+    }
 </style>
 <body class="bg-[#F5F5F5]">
   <!-- Header -->
@@ -55,7 +63,7 @@
             <div class="relative flex-1 mx-2">
                 <input type="text" placeholder="Search for items..." class="w-full border border-gray-300 rounded-full px-3 py-2 text-xs md:text-sm lg:text-base focus:outline-none">
             </div>
-            <button class="bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-700">
+            <button class="bg-gray-300 text-gray-800 px-4 py-2 rounded-full hover:bg-gray-400">
                 <i class='bx bx-search'></i>
             </button>
         </div>
@@ -151,11 +159,11 @@
         <div class="relative group md:inline-block lg:hidden">
             <button class="text-xs text-gray-700 hover:text-blue-600">More ▼</button>
             <div class="absolute hidden group-hover:block bg-gray-200 py-2 mt-1 z-10 w-48 rounded-md">
-                <a href="#" class="block px-4 py-1 hover:bg-gray-100 text-xs">Baby Products</a>
-                <a href="#" class="block px-4 py-1 hover:bg-gray-100 text-xs">Game & Fun</a>
-                <a href="#" class="block px-4 py-1 hover:bg-gray-100 text-xs">Drinks & Categories</a>
-                <a href="#" class="block px-4 py-1 hover:bg-gray-100 text-xs">Home & Kitchen</a>
-                <a href="#" class="block px-4 py-1 hover:bg-gray-100 text-xs">My Account</a>
+                <a href="#" class="block px-4 py-1 concentrations bg-gray-100 text-xs">Baby Products</a>
+                <a href="#" class="block px-4 py-1 concentrations bg-gray-100 text-xs">Game & Fun</a>
+                <a href="#" class="block px-4 py-1 concentrations bg-gray-100 text-xs">Drinks & Categories</a>
+                <a href="#" class="block px-4 py-1 concentrations bg-gray-100 text-xs">Home & Kitchen</a>
+                <a href="#" class="block px-4 py-1 concentrations bg-gray-100 text-xs">My Account</a>
             </div>
         </div>
     </div>
@@ -280,7 +288,7 @@
       </div>
 
       <!-- Capture the Magic Card -->
-      <div class="bg-blue-50 text-black rounded-lg p-6 flex items-center justify-between">
+      <div class="bg-[#E0F4FF] text-black rounded-lg p-6 flex items-center justify-between">
         <div>
           <h3 class="text-lg font-bold mb-2">Healthyness & Wellness</h3>
           <button class="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700">Shop Now</button>
@@ -289,7 +297,6 @@
           <img src="bottle-mockup-2.png" alt="Camera" class="w-24 h-auto">
         </div>
       </div>
-
     </div>
   </section>
 
@@ -309,7 +316,55 @@
     <a href="#" class="text-blue-600 hover:text-blue-800 mt-10">View All</a>
   </section>
 
+  <!-- More Stores Section -->
+  <section class="container mx-auto px-4 py-8">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-xl sm:text-2xl font-bold text-gray-800">More Stores</h2>
+      <a href="#" class="text-blue-600 hover:text-blue-800 text-sm sm:text-base flex items-center">
+        View All
+        <i class='bx bx-chevron-right ml-1'></i>
+      </a>
+    </div>
+    <div class="flex flex-wrap gap-4">
+      <!-- Store Card 1 -->
+      <div class="flex items-center space-x-3">
+        <img src="https://via.placeholder.com/48" alt="Appfur Store" class="w-12 h-12 rounded-full object-cover">
+        <div>
+          <p class="text-sm text-gray-800 font-semibold">Appfur Store</p>
+          <p class="text-xs text-gray-600">0 Products</p>
+        </div>
+      </div>
+      <!-- Store Card 2 -->
+      <div class="flex items-center space-x-3">
+        <img src="https://via.placeholder.com/48" alt="Hynolyn Health Servi..." class="w-12 h-12 rounded-full object-cover">
+        <div>
+          <p class="text-sm text-gray-800 font-semibold">Hynolyn Health Servi...</p>
+          <p class="text-xs text-gray-600">5 Products</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Rated Products Section -->
+  <section class="container mx-auto px-4 py-8 bg-[#E6F7FA]">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-xl sm:text-2xl font-bold text-gray-800">Top Rated Products</h2>
+      <div class="flex space-x-2">
+        <button id="top-rated-prev" class="bg-gray-300 text-gray-800 p-2 rounded-full hover:bg-gray-400 disabled:bg-gray-200 disabled:cursor-not-allowed">
+          <i class='bx bx-chevron-left'></i>
+        </button>
+        <button id="top-rated-next" class="bg-gray-300 text-gray-800 p-2 rounded-full hover:bg-gray-400 disabled:bg-gray-200 disabled:cursor-not-allowed">
+          <i class='bx bx-chevron-right'></i>
+        </button>
+      </div>
+    </div>
+    <div id="top-rated-grid" class="flex flex-nowrap gap-4 overflow-x-auto snap-x snap-mandatory hide-scrollbar">
+      <!-- Product cards will be dynamically inserted here -->
+    </div>
+  </section>
+
   <script>
+    // Items for Recommended for You Section
     const items = [
       {
         image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-13-67fb3a207ba51.webp",
@@ -369,6 +424,58 @@
       }
     ];
 
+    // Items for Top Rated Products Section
+    const topRatedItems = [
+      {
+        image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=500&auto=format&fit=crop",
+        stars: [],
+        company: "Foremade",
+        name: "Ear Headphone",
+        price: "50,000.00",
+        soldOut: false,
+      },
+      {
+        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=500&auto=format&fit=crop",
+        stars: [],
+        company: "Foremade",
+        name: "Men's Italian Loafer Oxf...",
+        price: "32,000.00",
+        soldOut: true,
+      },
+      {
+        image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-15-67fe3c328521a.webp",
+        stars: [],
+        company: "Hynolyn Health Servi...",
+        name: "Vigor Essential",
+        price: "24,000.00",
+        soldOut: false, 
+      },
+      {
+        image: "https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?q=80&w=500&auto=format&fit=crop",
+        stars: [],
+        company: "Hynolyn Health Servi...",
+        name: "Memory 24/7",
+        price: "32,900.00",
+        soldOut: false,
+      },
+      {
+        image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-15-67fe378f6bdf7.webp",
+        stars: [],
+        company: "Hynolyn Health Servi...",
+        name: "Colon Cleanser Tea",
+        price: "16,500.00",
+        soldOut: false,
+      },
+      {
+        image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-15-67fe35401ae7c.webp",
+        stars: [],
+        company: "Hynolyn Health Servi...",
+        name: "Revive",
+        price: "43,000.00",
+        soldOut: false,
+      }
+    ];
+
     // Sidebar Toggle
     const menuToggle = document.getElementById('menu-toggle');
     const closeSidebar = document.getElementById('close-sidebar');
@@ -389,7 +496,7 @@
       searchInput.focus();
     });
 
-    // Carousel Logic
+    // Carousel Logic for Hero Section
     const slides = [
       document.getElementById('carousel-slide-0'),
       document.getElementById('carousel-slide-1'),
@@ -440,11 +547,11 @@
       }
     });
 
-    // Dynamically Render Products from items array
+    // Dynamically Render Products for Both Sections
     document.addEventListener('DOMContentLoaded', () => {
+      // Render Recommended for You Section
       const productGrid = document.getElementById('product-grid');
 
-      // Map over the items array to create product cards
       const productCards = items.map(item => `
         <div class="bg-white rounded-lg p-6 flex flex-col items-center">
           <img src="${item.image}" alt="${item.name}" class="w-full h-40 object-cover rounded-sm mb-2">
@@ -464,8 +571,71 @@
         </div>
       `).join('');
 
-      // Insert the product cards into the grid
       productGrid.innerHTML = productCards;
+
+      // Render Top Rated Products Section
+      const topRatedGrid = document.getElementById('top-rated-grid');
+
+      const topRatedCards = topRatedItems.map(item => `
+        <div class="bg-white rounded-lg p-4 flex flex-col items-center snap-start min-w-[180px] lg:min-w-[220px]">
+          <img src="${item.image}" alt="${item.name}" class="w-full h-32 object-contain mb-2">
+          ${item.soldOut ? '<p class="text-orange-600 text-xs mb-2">Sorry this item is currently sold out</p>' : ''}
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400 text-sm">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+            <span class="text-gray-600 text-xs ml-1">(${item.stars.length})</span>
+          </div>
+          <p class="text-sm text-gray-800 text-center uppercase mb-1">${item.company}</p>
+          <p class="text-sm text-gray-800 text-center font-bold uppercase mb-1">${item.name}</p>
+          <p class="text-gray-800 font-semibold">₦${item.price}</p>
+        </div>
+      `).join('');
+
+      topRatedGrid.innerHTML = topRatedCards;
+
+      // Carousel Navigation for Top Rated Products
+      const topRatedPrev = document.getElementById('top-rated-prev');
+      const topRatedNext = document.getElementById('top-rated-next');
+
+      // Function to update button states (disable when at start/end)
+      function updateButtonStates() {
+        const scrollLeft = topRatedGrid.scrollLeft;
+        const maxScrollLeft = topRatedGrid.scrollWidth - topRatedGrid.clientWidth;
+
+        topRatedPrev.disabled = scrollLeft <= 0;
+        topRatedNext.disabled = scrollLeft >= maxScrollLeft - 1; // -1 to account for small rounding errors
+      }
+
+      // Function to calculate scroll amount based on screen size
+      function getScrollAmount() {
+        const isDesktop = window.innerWidth >= 1024; // lg breakpoint in Tailwind
+        const cardWidth = isDesktop ? 220 : 180; // Match min-w-[180px] and lg:min-w-[220px]
+        const cardsPerView = isDesktop ? 4 : 2; // 4 cards on desktop, 2 on mobile
+        const gap = 16; // Tailwind gap-4 = 16px
+        return (cardWidth * cardsPerView) + (gap * (cardsPerView - 1));
+      }
+
+      topRatedPrev.addEventListener('click', () => {
+        const scrollAmount = getScrollAmount();
+        topRatedGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+
+      topRatedNext.addEventListener('click', () => {
+        const scrollAmount = getScrollAmount();
+        topRatedGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+
+      // Update button states on scroll and initial load
+      topRatedGrid.addEventListener('scroll', updateButtonStates);
+      updateButtonStates();
+
+      // Update button states on window resize (to handle screen size changes)
+      window.addEventListener('resize', updateButtonStates);
     });
   </script>
 </body>
