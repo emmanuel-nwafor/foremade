@@ -11,8 +11,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Oi&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
-  <!-- Commenting out items.js for now -->
-  <script src="items.js"></script>
 </head>
 <style>
     * {
@@ -280,6 +278,18 @@
           <img src="camera-mockup.png" alt="Camera" class="w-24 h-auto">
         </div>
       </div>
+
+      <!-- Capture the Magic Card -->
+      <div class="bg-blue-50 text-black rounded-lg p-6 flex items-center justify-between">
+        <div>
+          <h3 class="text-lg font-bold mb-2">Capture the Magic Around</h3>
+          <button class="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700">Shop Now</button>
+        </div>
+        <div class="flex justify-between items-center">
+          <img src="camera-mockup.png" alt="Camera" class="w-24 h-auto">
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -299,51 +309,63 @@
     </div>
   </section>
 
-  <!-- JavaScript for Sidebar Toggle, Carousel, Category Dropdown, and Product Rendering -->
   <script>
-    // Define the items array directly in index.html (temporary fix)
     const items = [
       {
         image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-13-67fb3a207ba51.webp",
         stars: [],
         company: "Foremade",
         name: "VIZIO 55” 4K",
-        price: "500000.00",
+        price: "500,000.00",
       },
       {
-        image: "https://foremade.com/storage/app/public/product/thumbnail/revive-placeholder.webp",
+        image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-15-67fe35401ae7c.webp",
         stars: [],
         company: "Hynolyn Health Servi...",
         name: "Revive",
-        price: "43000.00",
+        price: "43,000.00",
       },
       {
-        image: "https://foremade.com/storage/app/public/product/thumbnail/vigor-essential-placeholder.webp",
+        image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-15-67fe3c328521a.webp",
         stars: [],
         company: "Hynolyn Health Servi...",
         name: "Vigor Essential",
-        price: "24000.00",
+        price: "24,000.00",
       },
       {
-        image: "https://foremade.com/storage/app/public/product/thumbnail/memory-247-placeholder.webp",
+        image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-15-67fe3a4b3a47d.webp",
         stars: [],
         company: "Hynolyn Health Servi...",
         name: "Memory 24/7",
-        price: "32900.00",
+        price: "32,900.00",
       },
       {
-        image: "https://foremade.com/storage/app/public/product/thumbnail/ginseng-coffee-placeholder.webp",
+        image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-15-67fe38c2b422f.webp",
         stars: [],
         company: "Hynolyn Health Servi...",
         name: "Ginseng Coffee",
-        price: "28000.00",
+        price: "28,000.00",
       },
       {
-        image: "https://foremade.com/storage/app/public/product/thumbnail/colon-cleanser-tea-placeholder.webp",
+        image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-15-67fe378f6bdf7.webp",
         stars: [],
         company: "Hynolyn Health Servi...",
         name: "Colon Cleanser Tea",
-        price: "TBD",
+        price: "165,000",
+      },
+      {
+        image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-13-67fb393f83e85.webp",
+        stars: [],
+        company: "Foremade",
+        name: "Fitbit Versa 4",
+        price: "45,000",
+      },
+      {
+        image: "https://foremade.com/storage/app/public/product/2025-04-13-67fb38979d04a.webp",
+        stars: [],
+        company: "Electric Kettles",
+        name: "Colon Cleanser Tea",
+        price: "165,000",
       }
     ];
 
@@ -424,8 +446,8 @@
 
       // Map over the items array to create product cards
       const productCards = items.map(item => `
-        <div class="bg-white rounded-lg p-4 flex flex-col items-center">
-          <img src="${item.image}" alt="${item.name}" class="w-full h-40 object-contain mb-2">
+        <div class="bg-white rounded-lg p-6 flex flex-col items-center">
+          <img src="${item.image}" alt="${item.name}" class="w-full h-40 object-cover rounded-sm mb-2">
           <div class="flex items-center mb-2">
             <div class="flex text-yellow-400 text-sm">
               <span>★</span>
@@ -436,7 +458,8 @@
             </div>
             <span class="text-gray-600 text-xs ml-1">(${item.stars.length})</span>
           </div>
-          <p class="text-sm text-gray-800 text-center uppercase mb-1">${item.company} ${item.name}</p>
+          <p class="text-sm text-gray-800 text-center uppercase mb-1">${item.company}</p>
+          <p class="text-sm text-gray-800 text-center font-bold uppercase mb-1">${item.name}</p>
           <p class="text-gray-800 font-semibold">₦${item.price}</p>
         </div>
       `).join('');
