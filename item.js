@@ -160,11 +160,41 @@ const homeKitchenItems = [
     image: "https://foremade.com/storage/app/public/product/2025-04-13-67fb38979d04a.webp",
     name: "Electric Kettles",
     price: "65,000.00",
+  },
+  {
+    image: "https://foremade.com/storage/app/public/product/2025-04-13-67fb38979d04a.webp",
+    name: "Electric Kettles",
+    price: "65,000.00",
+  },
+  {
+    image: "https://foremade.com/storage/app/public/product/2025-04-13-67fb38979d04a.webp",
+    name: "Electric Kettles",
+    price: "65,000.00",
+  },
+  {
+    image: "https://foremade.com/storage/app/public/product/2025-04-13-67fb38979d04a.webp",
+    name: "Electric Kettles",
+    price: "65,000.00",
   }
 ];
 
 // Items for Smart Watches Section
 const smartWatchesItems = [
+  {
+    image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-13-67fb393f83e85.webp",
+    name: "Fitbit Versa 4",
+    price: "45,000.00",
+  },
+  {
+    image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-13-67fb393f83e85.webp",
+    name: "Fitbit Versa 4",
+    price: "45,000.00",
+  },
+  {
+    image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-13-67fb393f83e85.webp",
+    name: "Fitbit Versa 4",
+    price: "45,000.00",
+  },
   {
     image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-13-67fb393f83e85.webp",
     name: "Fitbit Versa 4",
@@ -190,15 +220,25 @@ const electronicsItems = [
     price: "500,000.00",
   },
   {
-    image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-13-67fb3a207ba51.webp",
-    name: "VIZIO 55” 4K",
-    price: "500,000.00",
+    image: "https://pngimg.com/uploads/tv/tv_PNG39229.png",
+    name: "LG 88” Ultra 4K",
+    price: "600,000.00",
   },
   {
-    image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-13-67fb3a207ba51.webp",
-    name: "VIZIO 55” 4K",
-    price: "500,000.00",
-  }
+    image: "https://pngimg.com/uploads/tv/tv_PNG478.png",
+    name: "VIZIO 44” 4K",
+    price: "350,000.00",
+  },
+  {
+    image: "https://pngimg.com/uploads/tv/small/tv_PNG39248.png",
+    name: "SAMSUNG Ultra 4K",
+    price: "800,000.00",
+  },
+  {
+    image: "https://pngimg.com/uploads/tv/small/tv_PNG39223.png",
+    name: "SAMSUNG Mini Ultra 4K",
+    price: "400,000.00",
+  },
 ];
 
 // Sidebar Toggle
