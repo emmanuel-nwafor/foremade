@@ -93,8 +93,12 @@
           </div>
         </div>
       </div>
-      <nav class="flex flex-col p-4 space-y-2 text-xs sm:text-sm text-gray-600">
-        <a href="#" class="hover:text-blue-600">Welcome! Log in or sign up</a>
+      <nav class="flex flex-col p-4 space-y-2 text-sm text-gray-600">
+        <p href="#" class="text-sm cursor-pointer">
+            Hello! 
+            <a href="" class="hover:text-blue-600">Sign in</a>|
+            <a href="" class="hover:text-blue-600">Register</a>
+        </p>
         <a href="#" class="hover:text-blue-600">Hot Deals</a>
         <a href="#" class="hover:text-blue-600">Premium Brands</a>
         <a href="#" class="hover:text-blue-600">Gift Vouchers</a>
@@ -119,17 +123,38 @@
         </select>
       </div>
       <!-- Navigation Links (Hidden on Mobile, Visible on Desktop/Tablet) -->
-      <nav class="hidden md:flex flex-wrap items-center space-x-4 text-xs md:text-sm lg:text-base text-gray-600 items-center justify-center">
-        <a href="#" class="hover:text-blue-600 text-sm">Welcome! Log in or sign up</a>
-        <a href="#" class="hover:text-blue-600 text-sm">Hot Deals</a>
-        <a href="#" class="hover:text-blue-600 text-sm">Premium Brands</a>
-        <a href="#" class="hover:text-blue-600 text-sm">Gift Vouchers</a>
-        <a href="#" class="hover:text-blue-600 text-sm">Support Center</a>
-        <a href="#" class="hover:text-blue-600 text-sm">Delivery Options</a>
-        <a href="#" class="hover:text-blue-600 text-sm">Start Selling</a>
-        <a href="#" class="hover:text-blue-600 text-sm">Favorites</a>
-        <a href="#" class="hover:text-blue-600 text-sm">My Account</a>
-      </nav>
+      <div class="hidden md:flex items-center gap-6">
+        <p href="#" class="text-sm cursor-pointer text-xs">
+            Hi! 
+            <a href="" class="hover:text-blue-600">Sign in</a>|
+            <a href="" class="hover:text-blue-600">Register</a>
+        </p>
+        <a href="#" class="hover:text-blue-600 text-xs">Tablet & Phones</a>
+        <a href="#" class="hover:text-blue-600 text-xs">Health & Beauty</a>
+        <a href="#" class="hover:text-blue-600 text-xs">Foremade Fashion</a>
+        <a href="#" class="hover:text-blue-600 text-xs">Computers & Accessories</a>
+        <a href="#" class="hover:text-blue-600 text-xs">Electronics</a>
+        <a href="#" class="hover:text-blue-600 text-xs">Baby Products</a>
+        <a href="#" class="hover:text-blue-600 text-xs">Game & Fun</a>
+        <a href="#" class="hover:text-blue-600 text-xs">Drinks & Categories</a>
+        <a href="#" class="hover:text-blue-600 text-xs">Home & Kitchen</a>
+        <a href="#" class="hover:text-blue-600 text-xs">My Account</a>
+      
+        <!-- Dropdown for last links (visible on md only, hidden on lg) -->
+        <div class="relative group md:inline-block lg:hidden">
+          <button class="text-gray-700 hover:text-blue-600">More ▼</button>
+          <div class="absolute hidden group-hover:block bg-white shadow-lg py-2 mt-1 z-10 w-40">
+            <a href="#" class="hover:text-blue-600 text-xs">Baby Products</a>
+            <a href="#" class="hover:text-blue-600 text-xs">Game & Fun</a>
+            <a href="#" class="hover:text-blue-600 text-xs">Drinks & Categories</a>
+            <a href="#" class="hover:text-blue-600 text-xs">Home & Kitchen</a>
+            <a href="#" class="hover:text-blue-600 text-xs">My Account</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ////////// -->
+
     </div>
   </header>
 
