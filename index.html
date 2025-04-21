@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Foremade</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Boxicons CDN -->
+  <!-- Boxicons CDN (still included for other icons in the code, but not used for stars) -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <!-- Font link -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,7 @@
         font-family: "Poppins", sans-serif;
     }
 </style>
-<body class=" bg-[#F5F5F5]">
+<body class="bg-[#F5F5F5]">
   <!-- Header -->
   <header class="bg-white shadow-sm">
     <!-- Top Bar -->
@@ -107,7 +107,7 @@
         <a href="#" class="hover:text-blue-600">Gift Vouchers</a>
         <a href="#" class="hover:text-blue-600">Support Center</a>
         <a href="#" class="hover:text-blue-600">Delivery Options</a>
-        <a href="#" class="hover:text-blue-600">Start Selling</a>
+        <a href="#" class="hover:text-blue-600271">Start Selling</a>
         <a href="#" class="hover:text-blue-600">Favorites</a>
         <a href="#" class="hover:text-blue-600">My Account</a>
       </nav>
@@ -136,7 +136,7 @@
         <!-- Always visible links (Tablet & Phones to Electronics) -->
         <a href="#" class="hover:text-blue-600 text-xs">Tablet & Phones</a>
         <a href="#" class="hover:text-blue-600 text-xs">Health & Beauty</a>
-        <a href "#" class="hover:text-blue-600 text-xs">Foremade Fashion</a>
+        <a href="#" class="hover:text-blue-600 text-xs">Foremade Fashion</a>
         <a href="#" class="hover:text-blue-600 text-xs">Computers & Accessories</a>
         <a href="#" class="hover:text-blue-600 text-xs">Electronics</a>
     
@@ -277,6 +277,85 @@
         <div class="flex justify-between items-center">
           <img src="camera-mockup.png" alt="Camera" class="w-24 h-auto">
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommended for You Section -->
+  <section class="container mx-auto px-4 py-8">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-xl sm:text-2xl font-bold text-gray-800 text-center flex-1">Recommended for You</h2>
+      <a href="#" class="text-blue-600 hover:text-blue-800 text-sm sm:text-base">View All</a>
+    </div>
+    <div class="flex justify-center space-x-4 mb-6">
+      <button class="text-gray-800 font-semibold text-sm sm:text-base hover:text-blue-600">Featured Products</button>
+      <button class="text-gray-600 text-sm sm:text-base hover:text-blue-600">Best Selling</button>
+      <button class="text-gray-600 text-sm sm:text-base hover:text-blue-600">Latest Products</button>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <!-- Product Card 1 -->
+      <div class="bg-white rounded-lg p-4 flex flex-col items-center">
+        <img src="vigor-essential.png" alt="Vigor Essential" class="w-full h-40 object-contain mb-2">
+        <div class="flex items-center mb-2">
+          <div class="flex text-yellow-400 text-sm">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
+          <span class="text-gray-600 text-xs ml-1">(0)</span>
+        </div>
+        <p class="text-sm text-gray-800 text-center uppercase mb-1">Hynolyn Health Serv... Vigor Essential</p>
+        <p class="text-gray-800 font-semibold">24000.00</p>
+      </div>
+      <!-- Product Card 2 -->
+      <div class="bg-white rounded-lg p-4 flex flex-col items-center">
+        <img src="memory-247.png" alt="Memory 24/7" class="w-full h-40 object-contain mb-2">
+        <div class="flex items-center mb-2">
+          <div class="flex text-yellow-400 text-sm">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
+          <span class="text-gray-600 text-xs ml-1">(0)</span>
+        </div>
+        <p class="text-sm text-gray-800 text-center uppercase mb-1">Hynolyn Health Serv... Memory 24/7</p>
+        <p class="text-gray-800 font-semibold">32900.00</p>
+      </div>
+      <!-- Product Card 3 -->
+      <div class="bg-white rounded-lg p-4 flex flex-col items-center">
+        <img src="ginseng-coffee.png" alt="Ginseng Coffee" class="w-full h-40 object-contain mb-2">
+        <div class="flex items-center mb-2">
+          <div class="flex text-yellow-400 text-sm">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
+          <span class="text-gray-600 text-xs ml-1">(0)</span>
+        </div>
+        <p class="text-sm text-gray-800 text-center uppercase mb-1">Hynolyn Health Serv... Ginseng Coffee</p>
+        <p class="text-gray-800 font-semibold">28000.00</p>
+      </div>
+      <!-- Product Card 4 -->
+      <div class="bg-white rounded-lg p-4 flex flex-col items-center">
+        <img src="colon-cleanser-tea.png" alt="Colon Cleanser Tea" class="w-full h-40 object-contain mb-2">
+        <div class="flex items-center mb-2">
+          <div class="flex text-yellow-400 text-sm">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
+          <span class="text-gray-600 text-xs ml-1">(0)</span>
+        </div>
+        <p class="text-sm text-gray-800 text-center uppercase mb-1">Hynolyn Health Serv... Colon Cleanser Tea</p>
+        <p class="text-gray-800 font-semibold">16500.00</p>
       </div>
     </div>
   </section>
