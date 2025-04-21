@@ -25,7 +25,7 @@
         display: none; /* Chrome, Safari, and Opera */
     }
 </style>
-<body class="bg-[#F5F5F5]">
+<body class="bg-[#F5F5F5]" id="home">
   <!-- Header -->
   <header class="bg-white">
     <!-- Top Bar -->
@@ -310,10 +310,9 @@
       <button class="text-gray-600 text-sm sm:text-base hover:text-blue-600">Best Selling</button>
       <button class="text-gray-600 text-sm sm:text-base hover:text-blue-600">Latest Products</button>
     </div>
-    <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div id="product-grid" class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       <!-- Product cards will be dynamically inserted here -->
     </div>
-    <a href="#" class="text-blue-600 hover:text-blue-800 mt-10">View All</a>
   </section>
 
   <!-- More Stores Section -->
@@ -328,7 +327,7 @@
     <div class="flex flex-wrap gap-4">
       <!-- Store Card 1 -->
       <div class="flex items-center space-x-3">
-        <img src="https://via.placeholder.com/48" alt="Appfur Store" class="w-12 h-12 rounded-full object-cover">
+        <img src="https://foremade.com/storage/app/public/shop/2025-04-20-6805038d4a235.webp" alt="Appfur Store" class="w-12 h-12 rounded-full object-cover">
         <div>
           <p class="text-sm text-gray-800 font-semibold">Appfur Store</p>
           <p class="text-xs text-gray-600">0 Products</p>
@@ -336,7 +335,7 @@
       </div>
       <!-- Store Card 2 -->
       <div class="flex items-center space-x-3">
-        <img src="https://via.placeholder.com/48" alt="Hynolyn Health Servi..." class="w-12 h-12 rounded-full object-cover">
+        <img src="https://foremade.com/storage/app/public/shop/2025-04-15-67fe30f8566ee.webp" alt="Hynolyn Health Servi..." class="w-12 h-12 rounded-full object-cover">
         <div>
           <p class="text-sm text-gray-800 font-semibold">Hynolyn Health Servi...</p>
           <p class="text-xs text-gray-600">5 Products</p>
@@ -346,7 +345,7 @@
   </section>
 
   <!-- Top Rated Products Section -->
-  <section class="container mx-auto px-4 py-8 bg-[#E6F7FA]">
+  <section class="container mx-auto px-4 py-8">
     <div class="flex justify-between items-center mb-4">
       <h2 class="text-xl sm:text-2xl font-bold text-gray-800">Top Rated Products</h2>
       <div class="flex space-x-2">
@@ -363,280 +362,114 @@
     </div>
   </section>
 
-  <script>
-    // Items for Recommended for You Section
-    const items = [
-      {
-        image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-13-67fb3a207ba51.webp",
-        stars: [],
-        company: "Foremade",
-        name: "VIZIO 55” 4K",
-        price: "500,000.00",
-      },
-      {
-        image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-15-67fe35401ae7c.webp",
-        stars: [],
-        company: "Hynolyn Health Servi...",
-        name: "Revive",
-        price: "43,000.00",
-      },
-      {
-        image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-15-67fe3c328521a.webp",
-        stars: [],
-        company: "Hynolyn Health Servi...",
-        name: "Vigor Essential",
-        price: "24,000.00",
-      },
-      {
-        image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-15-67fe3a4b3a47d.webp",
-        stars: [],
-        company: "Hynolyn Health Servi...",
-        name: "Memory 24/7",
-        price: "32,900.00",
-      },
-      {
-        image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-15-67fe38c2b422f.webp",
-        stars: [],
-        company: "Hynolyn Health Servi...",
-        name: "Ginseng Coffee",
-        price: "28,000.00",
-      },
-      {
-        image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-15-67fe378f6bdf7.webp",
-        stars: [],
-        company: "Hynolyn Health Servi...",
-        name: "Colon Cleanser Tea",
-        price: "165,000",
-      },
-      {
-        image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-13-67fb393f83e85.webp",
-        stars: [],
-        company: "Foremade",
-        name: "Fitbit Versa 4",
-        price: "45,000",
-      },
-      {
-        image: "https://foremade.com/storage/app/public/product/2025-04-13-67fb38979d04a.webp",
-        stars: [],
-        company: "Electric Kettles",
-        name: "Colon Cleanser Tea",
-        price: "165,000",
-      }
-    ];
+  <!-- Health & Beauty Section -->
+  <section class="container mx-auto px-4 py-8">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-xl sm:text-2xl font-bold text-gray-800">Health & Beauty</h2>
+      <a href="#" class="text-blue-600 hover:text-blue-800 text-sm sm:text-base flex items-center">
+        View All
+        <i class='bx bx-chevron-right ml-1'></i>
+      </a>
+    </div>
+    <div class="relative">
+      <div id="health-beauty-grid" class="flex flex-nowrap gap-4 overflow-x-auto snap-x snap-mandatory hide-scrollbar">
+        <!-- Product cards will be dynamically inserted here -->
+      </div>
+      <button id="health-beauty-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-300 text-gray-800 p-2 rounded-full hover:bg-gray-400 disabled:bg-gray-200 disabled:cursor-not-allowed">
+        <i class='bx bx-chevron-left'></i>
+      </button>
+      <button id="health-beauty-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-300 text-gray-800 p-2 rounded-full hover:bg-gray-400 disabled:bg-gray-200 disabled:cursor-not-allowed">
+        <i class='bx bx-chevron-right'></i>
+      </button>
+    </div>
+  </section>
 
-    // Items for Top Rated Products Section
-    const topRatedItems = [
-      {
-        image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=500&auto=format&fit=crop",
-        stars: [],
-        company: "Foremade",
-        name: "Ear Headphone",
-        price: "50,000.00",
-        soldOut: false,
-      },
-      {
-        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=500&auto=format&fit=crop",
-        stars: [],
-        company: "Foremade",
-        name: "Men's Italian Loafer Oxf...",
-        price: "32,000.00",
-        soldOut: true,
-      },
-      {
-        image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-15-67fe3c328521a.webp",
-        stars: [],
-        company: "Hynolyn Health Servi...",
-        name: "Vigor Essential",
-        price: "24,000.00",
-        soldOut: false, 
-      },
-      {
-        image: "https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?q=80&w=500&auto=format&fit=crop",
-        stars: [],
-        company: "Hynolyn Health Servi...",
-        name: "Memory 24/7",
-        price: "32,900.00",
-        soldOut: false,
-      },
-      {
-        image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-15-67fe378f6bdf7.webp",
-        stars: [],
-        company: "Hynolyn Health Servi...",
-        name: "Colon Cleanser Tea",
-        price: "16,500.00",
-        soldOut: false,
-      },
-      {
-        image: "https://foremade.com/storage/app/public/product/thumbnail/2025-04-15-67fe35401ae7c.webp",
-        stars: [],
-        company: "Hynolyn Health Servi...",
-        name: "Revive",
-        price: "43,000.00",
-        soldOut: false,
-      }
-    ];
-
-    // Sidebar Toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const closeSidebar = document.getElementById('close-sidebar');
-    const searchToggle = document.getElementById('search-toggle');
-    const sidebar = document.getElementById('sidebar');
-
-    menuToggle.addEventListener('click', () => {
-      sidebar.classList.toggle('-translate-x-full');
-    });
-
-    closeSidebar.addEventListener('click', () => {
-      sidebar.classList.add('-translate-x-full');
-    });
-
-    searchToggle.addEventListener('click', () => {
-      sidebar.classList.remove('-translate-x-full');
-      const searchInput = sidebar.querySelector('input[type="text"]');
-      searchInput.focus();
-    });
-
-    // Carousel Logic for Hero Section
-    const slides = [
-      document.getElementById('carousel-slide-0'),
-      document.getElementById('carousel-slide-1'),
-      document.getElementById('carousel-slide-2'),
-    ];
-    const dots = [
-      document.getElementById('dot-0'),
-      document.getElementById('dot-1'),
-      document.getElementById('dot-2'),
-    ];
-    let currentSlide = 0;
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('opacity-100', i === index);
-        slide.classList.toggle('opacity-0', i !== index);
-      });
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('bg-white', i === index);
-        dot.classList.toggle('bg-gray-400', i !== index);
-      });
-    }
-
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
-
-    // Auto-slide every 5 seconds
-    setInterval(nextSlide, 5000);
-
-    // Manual slide on dot click
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        currentSlide = index;
-        showSlide(currentSlide);
-      });
-    });
-
-    // Initial slide
-    showSlide(currentSlide);
-
-    // Category Dropdown Navigation
-    const categoryDropdown = document.getElementById('category-dropdown');
-    categoryDropdown.addEventListener('change', (e) => {
-      if (e.target.value) {
-        window.location.href = `#${e.target.value}`;
-      }
-    });
-
-    // Dynamically Render Products for Both Sections
-    document.addEventListener('DOMContentLoaded', () => {
-      // Render Recommended for You Section
-      const productGrid = document.getElementById('product-grid');
-
-      const productCards = items.map(item => `
-        <div class="bg-white rounded-lg p-6 flex flex-col items-center">
-          <img src="${item.image}" alt="${item.name}" class="w-full h-40 object-cover rounded-sm mb-2">
-          <div class="flex items-center mb-2">
-            <div class="flex text-yellow-400 text-sm">
-              <span>★</span>
-              <span>★</span>
-              <span>★</span>
-              <span>★</span>
-              <span>★</span>
-            </div>
-            <span class="text-gray-600 text-xs ml-1">(${item.stars.length})</span>
+  <!-- Footer Section -->
+  <footer class="bg-gray-900 text-white py-8 relative">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- First Column: Logo, Contact, Newsletter -->
+        <div>
+          <div class="mb-4">
+            <img src="logo2.png" alt="Foremade Logo" class="h-8">
           </div>
-          <p class="text-sm text-gray-800 text-center uppercase mb-1">${item.company}</p>
-          <p class="text-sm text-gray-800 text-center font-bold uppercase mb-1">${item.name}</p>
-          <p class="text-gray-800 font-semibold">₦${item.price}</p>
-        </div>
-      `).join('');
-
-      productGrid.innerHTML = productCards;
-
-      // Render Top Rated Products Section
-      const topRatedGrid = document.getElementById('top-rated-grid');
-
-      const topRatedCards = topRatedItems.map(item => `
-        <div class="bg-white rounded-lg p-4 flex flex-col items-center snap-start min-w-[180px] lg:min-w-[220px]">
-          <img src="${item.image}" alt="${item.name}" class="w-full h-32 object-contain mb-2">
-          ${item.soldOut ? '<p class="text-orange-600 text-xs mb-2">Sorry this item is currently sold out</p>' : ''}
-          <div class="flex items-center mb-2">
-            <div class="flex text-yellow-400 text-sm">
-              <span>★</span>
-              <span>★</span>
-              <span>★</span>
-              <span>★</span>
-              <span>★</span>
-            </div>
-            <span class="text-gray-600 text-xs ml-1">(${item.stars.length})</span>
+          <p class="text-sm mb-2">Nigeria</p>
+          <p class="text-sm mb-4">info@foremade.com</p>
+          <div class="flex items-center mb-4">
+            <i class='bx bx-phone text-sm mr-2'></i>
+            <span class="text-sm">Hotline +2349126866984</span>
           </div>
-          <p class="text-sm text-gray-800 text-center uppercase mb-1">${item.company}</p>
-          <p class="text-sm text-gray-800 text-center font-bold uppercase mb-1">${item.name}</p>
-          <p class="text-gray-800 font-semibold">₦${item.price}</p>
+          <div class="flex space-x-4 mb-4">
+            <a href="#" class="text-white hover:text-gray-400"><i class='bx bxl-twitter text-xl'></i></a>
+            <a href="#" class="text-white hover:text-gray-400"><i class='bx bxl-instagram text-xl'></i></a>
+            <a href="#" class="text-white hover:text-gray-400"><i class='bx bxl-facebook text-xl'></i></a>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold mb-2">Newsletter</h3>
+            <p class="text-sm mb-4">Subscribe our newsletter to get latest updates</p>
+            <div class="flex space-x-2">
+              <div class="relative flex-1">
+                <input type="email" placeholder="Enter your email" class="w-full border border-gray-300 rounded-full px-4 py-2 text-sm text-gray-800 focus:outline-none">
+                <i class='bx bx-envelope absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600'></i>
+              </div>
+              <button class="bg-white text-gray-800 px-4 py-2 rounded-full hover:bg-gray-200 text-sm">Submit</button>
+            </div>
+          </div>
         </div>
-      `).join('');
 
-      topRatedGrid.innerHTML = topRatedCards;
+        <!-- Second Column: Accounts -->
+        <div>
+          <h3 class="text-sm font-semibold mb-4">Accounts</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-gray-400">Open Your Store</a></li>
+            <li><a href="#" class="hover:text-gray-400">Profile</a></li>
+            <li><a href="#" class="hover:text-gray-400">Track Order</a></li>
+            <li><a href="#" class="hover:text-gray-400">Help & Support</a></li>
+          </ul>
+        </div>
 
-      // Carousel Navigation for Top Rated Products
-      const topRatedPrev = document.getElementById('top-rated-prev');
-      const topRatedNext = document.getElementById('top-rated-next');
+        <!-- Third Column: Quick Links -->
+        <div>
+          <h3 class="text-sm font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-gray-400">Featured Products</a></li>
+            <li><a href="#" class="hover:text-gray-400">Top Stores</a></li>
+            <li><a href="#" class="hover:text-gray-400">Latest Products</a></li>
+            <li><a href="#" class="hover:text-gray-400">FAQ</a></li>
+          </ul>
+        </div>
 
-      // Function to update button states (disable when at start/end)
-      function updateButtonStates() {
-        const scrollLeft = topRatedGrid.scrollLeft;
-        const maxScrollLeft = topRatedGrid.scrollWidth - topRatedGrid.clientWidth;
+        <!-- Fourth Column: Other -->
+        <div>
+          <h3 class="text-sm font-semibold mb-4">Other</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-gray-400">About Company</a></li>
+            <li><a href="#" class="hover:text-gray-400">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-gray-400">Terms & Conditions</a></li>
+            <li><a href="#" class="hover:text-gray-400">Refund Policy</a></li>
+            <li><a href="#" class="hover:text-gray-400">Return Policy</a></li>
+            <li><a href="#" class="hover:text-gray-400">Cancellation Policy</a></li>
+            <li><a href="#" class="hover:text-gray-400">Support Ticket</a></li>
+          </ul>
+        </div>
+      </div>
 
-        topRatedPrev.disabled = scrollLeft <= 0;
-        topRatedNext.disabled = scrollLeft >= maxScrollLeft - 1; // -1 to account for small rounding errors
-      }
+      <!-- Copyright -->
+      <div class="mt-8 text-center text-sm">
+        <p>Copyright © 2019-2025 Foremade, Inc. All rights reserved.</p>
+      </div>
+    </div>
 
-      // Function to calculate scroll amount based on screen size
-      function getScrollAmount() {
-        const isDesktop = window.innerWidth >= 1024; // lg breakpoint in Tailwind
-        const cardWidth = isDesktop ? 220 : 180; // Match min-w-[180px] and lg:min-w-[220px]
-        const cardsPerView = isDesktop ? 4 : 2; // 4 cards on desktop, 2 on mobile
-        const gap = 16; // Tailwind gap-4 = 16px
-        return (cardWidth * cardsPerView) + (gap * (cardsPerView - 1));
-      }
+    <!-- WhatsApp Floating Button -->
+    <a href="#" class="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600">
+      <i class='bx bxl-whatsapp text-2xl'></i>
+    </a>
 
-      topRatedPrev.addEventListener('click', () => {
-        const scrollAmount = getScrollAmount();
-        topRatedGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-      });
-
-      topRatedNext.addEventListener('click', () => {
-        const scrollAmount = getScrollAmount();
-        topRatedGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-      });
-
-      // Update button states on scroll and initial load
-      topRatedGrid.addEventListener('scroll', updateButtonStates);
-      updateButtonStates();
-
-      // Update button states on window resize (to handle screen size changes)
-      window.addEventListener('resize', updateButtonStates);
-    });
-  </script>
+    <!-- Back to Top Button -->
+    <a href="#home" class="fixed bottom-16 right-4 bg-gray-300 text-gray-800 p-3 rounded-full shadow-lg hover:bg-gray-400">
+      <i class='bx bx-chevron-up text-2xl'></i>
+    </a>
+  </footer>
+ <script src="item.js"></script>
 </body>
 </html>
