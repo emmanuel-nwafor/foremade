@@ -1,4 +1,3 @@
-i mean this
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,147 +32,155 @@ i mean this
 <body class="bg-[#F5F5F5]" id="home">
   <!-- Header -->
   <header class="bg-white">
-    <!-- Top Bar -->
-    <div class="bg-gray-800 text-white text-xs sm:text-sm py-2">
-      <div class="container mx-auto px-4 flex flex-wrap justify-between items-center">
-        <div class="flex items-center">
-          <i class='bx bx-phone mr-2'></i>
-          <span>+2349126866984</span>
+    <!-- Top Bar (Visible on Desktop and Tablet) -->
+    <div class="hidden sm:block bg-white border-b border-gray-200 text-gray-600 py-2">
+      <div class="container mx-auto px-4 flex flex-col sm:flex-row sm:justify-between sm:items-center">
+        <div class="flex flex-wrap items-center gap-3 sm:gap-4 text-xs">
+          <p class="cursor-pointer">
+            Hi! 
+            <a href="#" class="text-gray-600 hover:underline">Sign in</a> or 
+            <a href="#" class="text-gray-600 hover:underline">Register</a>
+          </p>
+          <a href="#" class="hover:text-blue-600">Daily Deals</a>
+          <a href="#" class="hover:text-blue-600">Brand Outlet</a>
+          <a href="#" class="hover:text-blue-600">Gift Cards</a>
+          <a href="#" class="hover:text-blue-600">Help & Contact</a>
         </div>
-        <div class="flex items-center space-x-4 mt-2 sm:mt-0">
-          <div class="flex items-center">
-            <img src="https://flagcdn.com/16x12/gb.png" alt="UK Flag" class="mr-1">
-            <span>English</span>
-            <i class='bx bx-chevron-down ml-1'></i>
+        <div class="flex flex-wrap items-center gap-3 sm:gap-4 text-xs mt-2 sm:mt-0">
+          <a href="#" class="hover:text-blue-600">Ship to</a>
+          <a href="#" class="hover:text-blue-600">Sell</a>
+          <a href="#" class="hover:text-blue-600">Watchlist</a>
+          <div class="relative group">
+            <button class="hover:text-blue-600 flex items-center">
+              My Foremade <i class='bx bx-chevron-down ml-1'></i>
+            </button>
+            <div class="absolute hidden group-hover:block bg-white border border-gray-200 py-2 mt-1 z-10 w-48 rounded-md shadow-lg">
+              <a href="#" class="block px-4 py-1 text-xs hover:bg-gray-100">Profile</a>
+              <a href="#" class="block px-4 py-1 text-xs hover:bg-gray-100">Orders</a>
+              <a href="#" class="block px-4 py-1 text-xs hover:bg-gray-100">Favorites</a>
+              <a href="#" class="block px-4 py-1 text-xs hover:bg-gray-100">Settings</a>
+            </div>
           </div>
-          <a href="#" class="hover:text-blue-300">Start Selling</a>
+          <i class='bx bx-bell text-gray-600'></i>
+          <i class='bx bx-cart-alt text-gray-600'></i>
         </div>
       </div>
     </div>
 
-    <div class="container mx-auto px-4 py-2 flex justify-evenly items-center">
+    <div class="container mx-auto px-4 py-2 flex justify-between items-center">
       <!-- Logo -->
       <div class="flex items-center">
-        <img src="http://foremade.com/storage/app/public/company/2025-04-20-6805437335cb6.webp" class="h-10" alt="foremade">
+        <img src="http://foremade.com/storage/app/public/company/2025-04-20-6805437335cb6.webp" class="h-8 sm:h-10" alt="foremade">
       </div>
 
-      <!-- Search Bar (Visible on Desktop) -->
-      <div class="container mx-auto px-4 py-2 hidden md:flex items-center space-x-4">
-        <div class="flex w-full">
-            <div class="relative flex-1 mx-2">
-                <input type="text" placeholder="Search for anything..." class="w-full border-2 border-black rounded-full px-3 py-2 text-xs md:text-sm lg:text-base focus:outline-none">
-            </div>
-            <button class="bg-blue-500 text-white px-10 py-2 rounded-full hover:bg-gray-400">
-                <!-- <i class='bx bx-search'></i> -->
-                 Search
-            </button>
+      <!-- Search Bar (Visible on Desktop and Tablet) -->
+      <div class="hidden sm:flex items-center w-full max-w-md sm:max-w-lg md:max-w-3xl mx-4 border border-gray-300 rounded-full">
+        <div class="relative">
+          <select class="bg-gray-100 py-2 pl-3 pr-8 text-xs focus:outline-none appearance-none rounded-l-full border-r border-gray-300">
+            <option>All Categories</option>
+            <option>Electronics</option>
+            <option>Fashion</option>
+            <option>Motors</option>
+            <option>Home & Garden</option>
+          </select>
+          <i class='bx bx-chevron-down absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-600 text-sm'></i>
         </div>
+        <div class="relative flex-1">
+          <input type="text" placeholder="Search for anything" class="w-full bg-white py-2 pl-10 pr-3 text-xs focus:outline-none placeholder-black border-none" />
+          <i class='bx bx-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 text-sm'></i>
+        </div>
+        <button class="bg-blue-700 text-white px-6 py-2 rounded-r-full hover:bg-blue-800 text-xs border-none">
+          Search
+        </button>
       </div>
 
-      <!-- Search Icon -->
-      <div class="flex items-center space-x-4">
-        <i id="search-toggle" class="bx bx-search text-gray-600 text-2xl cursor-pointer md:hidden"></i>
-      </div>
-
-      <!-- Cart Icon -->
-      <div class="flex items-center space-x-4">
+      <!-- Cart Icon (Visible on Mobile) -->
+      <div class="flex items-center space-x-4 sm:hidden">
         <i class='bx bx-cart-alt text-gray-600 text-2xl'></i>
       </div>
       
       <!-- Hamburger Menu for Mobile -->
-      <div class="md:hidden">
+      <div class="sm:hidden">
         <button id="menu-toggle" class="text-gray-600 focus:outline-none">
           <i class='bx bx-menu text-2xl'></i>
         </button>
       </div>
     </div>
 
+    <!-- Category Links (Visible on Desktop and Tablet) -->
+    <div class="hidden sm:block border-t border-gray-200 py-2">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap gap-2 sm:gap-4 text-xs text-gray-600">
+          <a href="#" class="hover:text-blue-600">Foremade Live</a>
+          <a href="#" class="hover:text-blue-600">Saved</a>
+          <a href="#" class="hover:text-blue-600">Electronics</a>
+          <a href="#" class="hover:text-blue-600">Motors</a>
+          <a href="#" class="hover:text-blue-600">Fashion</a>
+          <a href="#" class="hover:text-blue-600">Collectibles and Art</a>
+          <a href="#" class="hover:text-blue-600">Sports</a>
+          <a href="#" class="hover:text-blue-600">Health & Beauty</a>
+          <a href="#" class="hover:text-blue-600">Industrial Equipment</a>
+          <a href="#" class="hover:text-blue-600">Home & Garden</a>
+          <a href="#" class="hover:text-blue-600">Deals</a>
+          <a href="#" class="hover:text-blue-600">Sell</a>
+        </div>
+      </div>
+    </div>
+
     <!-- Sidebar for Mobile -->
-    <div id="sidebar" class="fixed inset-y-0 left-0 w-64 bg-white transform -translate-x-full transition-transform duration-300 md:hidden z-50">
+    <div id="sidebar" class="fixed inset-y-0 left-0 w-64 bg-white transform -translate-x-full transition-transform duration-300 sm:hidden z-50">
       <div class="flex justify-between items-center p-4 border-b">
-        <h2 class="text-lg font-bold">Menu</h2>
+        <h2 class="text-base font-bold">Menu</h2>
         <button id="close-sidebar" class="text-gray-600 focus:outline-none">
           <i class='bx bx-x text-2xl'></i>
         </button>
       </div>
-      <div class="mt-5">
-        <!-- Search Bar in Sidebar for Mobile/Tablet -->
-        <div class="flex w-full md:hidden">
-          <div class="relative flex-1 mx-2">
-            <input type="text" placeholder="Search for items..." class="w-full border border-gray-300 rounded-full p-4 text-xs sm:text-sm focus:outline-none">
-            <i class='bx bx-search absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600'></i>
-          </div>
-        </div>
-      </div>
       <nav class="flex flex-col p-4 space-y-2 text-sm text-gray-600">
-        <p href="#" class="text-sm cursor-pointer">
-            Hi! 
-            <a href="" class="text-blue-500 underline">Sign in</a>|
-            <a href="" class="text-blue-500 underline">Register</a>
+        <p class="cursor-pointer">
+          Hi! 
+          <a href="#" class="text-black underline">Sign in</a>|
+          <a href="#" class="text-black underline">Register</a>
         </p>
         <a href="#" class="hover:text-blue-600">Hot Deals</a>
         <a href="#" class="hover:text-blue-600">Premium Brands</a>
         <a href="#" class="hover:text-blue-600">Gift Vouchers</a>
         <a href="#" class="hover:text-blue-600">Support Center</a>
         <a href="#" class="hover:text-blue-600">Delivery Options</a>
-        <a href="#" class="hover:text-blue-600">Start Selling</a>
+        <a href="#" class="text-black hover:text-blue-600">Start Selling</a>
         <a href="#" class="hover:text-blue-600">Favorites</a>
         <a href="#" class="hover:text-blue-600">My Account</a>
       </nav>
     </div>
 
-    <!-- Category Links -->
-    <div class="container mx-auto px-4 py-2">
-      <hr class="m-2">
-      <!-- Dropdown for max-md devices -->
-      <div class="md:hidden">
-        <select id="category-dropdown" class="w-full border border-gray-300 rounded px-2 py-1 text-xs sm:text-sm text-gray-600 focus:outline-none">
-          <option value="" disabled selected>Select a Category</option>
-          <option value="home">Home</option>
-          <option value="stores">Stores</option>
-          <option value="brands">Brands</option>
-        </select>
+    <!-- Search Input and Category Buttons for Mobile -->
+    <div class="container mx-auto px-4 py-2 sm:hidden">
+      <div>
+        <div class="relative flex-1 mx-2">
+          <input type="text" placeholder="Search for anything" class="w-full text-black border border-gray-300 rounded-full p-3 text-sm focus:outline-none">
+          <i class='bx bx-camera absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600'></i>
+        </div>      
       </div>
-      <!-- Navigation Links (Hidden on Mobile, Visible on Tablet and Desktop) -->
-      <div class="hidden md:flex items-center gap-3 flex-wrap align-items justify-center">
-        <p href="#" class="text-sm cursor-pointer">
-          Hi! 
-          <a href="" class="text-blue-500 underline">Sign in</a>|
-          <a href="" class="text-blue-500 underline">Register</a>
-        </p>
-    
-        <!-- Always visible links (Tablet & Phones to Electronics) -->
-        <a href="#" class="hover:text-blue-600 text-xs">Tablet & Phones</a>
-        <a href="#" class="hover:text-blue-600 text-xs">Health & Beauty</a>
-        <a href="#" class="hover:text-blue-600 text-xs">Foremade Fashion</a>
-        <a href="#" class="hover:text-blue-600 text-xs">Computers & Accessories</a>
-        <a href="#" class="hover:text-blue-600 text-xs">Electronics</a>
-    
-        <!-- These are hidden on md, visible on lg -->
-        <a href="#" class="hover:text-blue-600 text-xs hidden lg:inline">Baby Products</a>
-        <a href="#" class="hover:text-blue-600 text-xs hidden lg:inline">Game & Fun</a>
-        <a href="#" class="hover:text-blue-600 text-xs hidden lg:inline">Drinks & Categories</a>
-        <a href="#" class="hover:text-blue-600 text-xs hidden lg:inline">Home & Kitchen</a>
-        <a href="#" class="hover:text-blue-600 text-xs hidden lg:inline">My Account</a>
-    
-        <!-- Dropdown for Tablets only -->
-        <div class="relative group md:inline-block lg:hidden">
-            <button class="text-xs text-gray-700 hover:text-blue-600">More ▼</button>
-            <div class="absolute hidden group-hover:block bg-gray-200 py-2 mt-1 z-10 w-48 rounded-md">
-                <a href="#" class="block px-4 py-1 concentrations bg-gray-100 text-xs">Baby Products</a>
-                <a href="#" class="block px-4 py-1 concentrations bg-gray-100 text-xs">Game & Fun</a>
-                <a href="#" class="block px-4 py-1 concentrations bg-gray-100 text-xs">Drinks & Categories</a>
-                <a href="#" class="block px-4 py-1 concentrations bg-gray-100 text-xs">Home & Kitchen</a>
-                <a href="#" class="block px-4 py-1 concentrations bg-gray-100 text-xs">My Account</a>
-            </div>
-        </div>
-    </div>
-    
+
+      <!-- Category Buttons for Mobile -->
+      <div class="flex items-center justify-start gap-2 m-2 overflow-x-auto hide-scrollbar">
+        <button class="flex items-center justify-center bg-white border border-gray-200 rounded-full px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+          <i class='bx bx-heart mr-2'></i>Saved
+        </button>
+        <button class="flex items-center justify-center bg-white border border-gray-200 rounded-full px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+          <i class='bx bx-map mr-2'></i>Local
+        </button>
+        <button class="flex items-center justify-center bg-white border border-gray-200 rounded-full px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+          <i class='bx bx-closet mr-2'></i>Fashion
+        </button>
+        <button class="flex items-center justify-center bg-white border border-gray-200 rounded-full px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+          <i class='bx bx-car mr-2'></i>Motors
+        </button>
+      </div>
     </div>
   </header>
 
   <!-- Hero Section with Full-Width Carousel -->
-  <section class="relative h-96 sm:h-[400px] w-full">
+  <section class="relative h-64 sm:h-80 md:h-96 w-full">
     <!-- Carousel-1 -->
     <div id="carousel-slide-0" class="absolute inset-0 opacity-100 transition-opacity duration-1000">
       <div class="relative w-full h-full">
@@ -182,9 +189,9 @@ i mean this
         <div class="absolute top-0 left-0 w-full h-full flex items-center">
           <div class="container mx-auto px-4">
             <div class="text-white max-w-lg text-left">
-              <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-2">Discover Support Tailored for You</h2>
-              <p class="mb-4">Explore solutions for shipping, returns, and more.</p>
-              <button class="bg-white text-gray-800 px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100">Get Started</button>
+              <h2 class="text-lg sm:text-xl md:text-2xl font-bold mb-2">Discover Support Tailored for You</h2>
+              <p class="mb-4 text-sm sm:text-xs">Explore solutions for shipping, returns, and more.</p>
+              <button class="bg-white text-gray-800 px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100 text-sm sm:text-xs">Get Started</button>
             </div>
           </div>
         </div>
@@ -198,9 +205,9 @@ i mean this
         <div class="absolute top-0 left-0 w-full h-full flex items-center">
           <div class="container mx-auto px-4">
             <div class="text-white max-w-lg text-left">
-              <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-2">Hassle-Free Returns</h2>
-              <p class="mb-4">Simplify your shopping with easy return options.</p>
-              <button class="bg-white text-gray-800 px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100">Get Started</button>
+              <h2 class="text-lg sm:text-xl md:text-2xl font-bold mb-2">Hassle-Free Returns</h2>
+              <p class="mb-4 text-sm sm:text-xs">Simplify your shopping with easy return options.</p>
+              <button class="bg-white text-gray-800 px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100 text-sm sm:text-xs">Get Started</button>
             </div>
           </div>
         </div>
@@ -214,9 +221,9 @@ i mean this
         <div class="absolute top-0 left-0 w-full h-full flex items-center">
           <div class="container mx-auto px-4">
             <div class="text-white max-w-lg text-left">
-              <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-2">Shop with Confidence</h2>
-              <p class="mb-4">Enjoy seamless support for all your purchases.</p>
-              <button class="bg-white text-gray-800 px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100">Get Started</button>
+              <h2 class="text-lg sm:text-xl md:text-2xl font-bold mb-2">Shop with Confidence</h2>
+              <p class="mb-4 text-sm sm:text-xs">Enjoy seamless support for all your purchases.</p>
+              <button class="bg-white text-gray-800 px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100 text-sm sm:text-xs">Get Started</button>
             </div>
           </div>
         </div>
@@ -232,70 +239,70 @@ i mean this
 
   <!-- Top Categories Section -->
   <section class="container mx-auto px-4 py-8">
-    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">Top Categories</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-4">Top Categories</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
       <!-- Main Banner: Cut the Price -->
-      <div class="md:col-span-2 bg-[#E0F4FF] text-black rounded-lg p-6 flex flex-col md:flex-row items-center">
+      <div class="sm:col-span-2 bg-[#E0F4FF] text-black rounded-lg p-4 sm:p-6 flex flex-col sm:flex-row items-center">
         <div class="flex-1">
-          <h3 class="text-2xl sm:text-3xl font-bold mb-2">Cut the Price, Not the Features</h3>
-          <p class="text-sm sm:text-base mb-4">Get the latest phones at 20% off</p>
-          <button class="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700">Buy Now</button>
+          <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-2">Cut the Price, Not the Features</h3>
+          <p class="text-sm sm:text-xs mb-4">Get the latest phones at 20% off</p>
+          <button class="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 text-sm sm:text-xs">Buy Now</button>
         </div>
-        <div class="flex-1 mt-4 md:mt-0">
+        <div class="flex-1 mt-4 sm:mt-0">
           <img src="iphone-mockup.png" alt="Phone" class="w-full h-auto">
         </div>
       </div>
 
       <!-- Happy Club Section -->
-      <div class="bg-[#D1FAE5] rounded-lg p-6 flex flex-col justify-between">
+      <div class="bg-[#D1FAE5] rounded-lg p-4 sm:p-6 flex flex-col justify-between">
         <div>
-          <h3 class="text-lg font-bold text-teal-800 mb-2">Happy Club</h3>
-          <p class="text-sm text-teal-800 mb-4">Collect coupons from stores and apply to get special discount</p>
+          <h3 class="text-base sm:text-lg md:text-xl font-bold text-teal-800 mb-2">Happy Club</h3>
+          <p class="text-sm sm:text-xs text-teal-800 mb-4">Collect coupons from stores and apply to get special discount</p>
         </div>
         <div class="space-y-4">
           <div class="bg-white rounded-lg p-4">
-            <p class="text-sm font-semibold text-teal-800">10% OFF</p>
-            <p class="text-xs text-gray-600">For ALL SHOPS</p>
-            <p class="text-xs text-gray-600">CODE: 0va6ghmixg</p>
+            <p class="text-sm sm:text-xs font-semibold text-teal-800">10% OFF</p>
+            <p class="text-xs sm:text-[0.65rem] text-gray-600">For ALL SHOPS</p>
+            <p class="text-xs sm:text-[0.65rem] text-gray-600">CODE: 0va6ghmixg</p>
           </div>
           <div class="bg-white rounded-lg p-4">
-            <p class="text-sm font-semibold text-teal-800">30% OFF</p>
-            <p class="text-xs text-gray-600">For ALL SHOPS</p>
-            <p class="text-xs text-gray-600">CODE: h7ay6gi9T7</p>
+            <p class="text-sm sm:text-xs font-semibold text-teal-800">30% OFF</p>
+            <p class="text-xs sm:text-[0.65rem] text-gray-600">For ALL SHOPS</p>
+            <p class="text-xs sm:text-[0.65rem] text-gray-600">CODE: h7ay6gi9T7</p>
           </div>
         </div>
       </div>
 
       <!-- Style Meets Function Card -->
-      <div class="bg-[#EDE9FE] text-black rounded-lg p-6 flex items-center justify-between">
+      <div class="bg-[#EDE9FE] text-black rounded-lg p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between">
         <div>
-          <h3 class="text-lg font-bold mb-2">Style Meets Function</h3>
-          <button class="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700">Shop Now</button>
+          <h3 class="text-base sm:text-lg md:text-xl font-bold mb-2">Style Meets Function</h3>
+          <button class="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 text-sm sm:text-xs">Shop Now</button>
         </div>
-        <div class="flex justify-between items-center">
-          <img src="laptop-mockup.png" alt="Laptop" class="w-28 h-auto">
+        <div class="mt-4 sm:mt-0">
+          <img src="laptop-mockup.png" alt="Laptop" class="w-24 sm:w-28 h-auto">
         </div>
       </div>
 
       <!-- Capture the Magic Card -->
-      <div class="bg-[#FFE5E5] text-black rounded-lg p-6 flex items-center justify-between">
+      <div class="bg-[#FFE5E5] text-black rounded-lg p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between">
         <div>
-          <h3 class="text-lg font-bold mb-2">Capture the Magic Around</h3>
-          <button class="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700">Shop Now</button>
+          <h3 class="text-base sm:text-lg md:text-xl font-bold mb-2">Capture the Magic Around</h3>
+          <button class="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 text-sm sm:text-xs">Shop Now</button>
         </div>
-        <div class="flex justify-between items-center">
-          <img src="camera-mockup.png" alt="Camera" class="w-24 h-auto">
+        <div class="mt-4 sm:mt-0">
+          <img src="camera-mockup.png" alt="Camera" class="w-20 sm:w-24 h-auto">
         </div>
       </div>
 
-      <!-- Capture the Magic Card -->
-      <div class="bg-[#E0F4FF] text-black rounded-lg p-6 flex items-center justify-between">
+      <!-- Health & Wellness Card -->
+      <div class="bg-[#E0F4FF] text-black rounded-lg p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between">
         <div>
-          <h3 class="text-lg font-bold mb-2">Healthyness & Wellness</h3>
-          <button class="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700">Shop Now</button>
+          <h3 class="text-base sm:text-lg md:text-xl font-bold mb-2">Health & Wellness</h3>
+          <button class="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 text-sm sm:text-xs">Shop Now</button>
         </div>
-        <div class="flex justify-between items-center">
-          <img src="bottle-mockup-2.png" alt="Camera" class="w-24 h-auto">
+        <div class="mt-4 sm:mt-0">
+          <img src="bottle-mockup-2.png" alt="Bottle" class="w-20 sm:w-24 h-auto">
         </div>
       </div>
     </div>
@@ -304,14 +311,14 @@ i mean this
   <!-- Recommended for You Section -->
   <section class="container mx-auto px-4 py-8">
     <div class="flex justify-between items-center mb-4">
-      <h2 class="text-xl sm:text-2xl font-bold text-gray-800 text-center flex-1">Recommended for You</h2>
+      <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 text-center flex-1">Recommended for You</h2>
     </div>
     <div class="flex justify-center space-x-4 mb-6">
-      <button class="text-gray-800 font-semibold text-sm sm:text-base hover:text-blue-600">Featured Products</button>
-      <button class="text-gray-600 text-sm sm:text-base hover:text-blue-600">Best Selling</button>
-      <button class="text-gray-600 text-sm sm:text-base hover:text-blue-600">Latest Products</button>
+      <button class="text-gray-800 font-semibold text-sm sm:text-xs hover:text-blue-600">Featured Products</button>
+      <button class="text-gray-600 text-sm sm:text-xs hover:text-blue-600">Best Selling</button>
+      <button class="text-gray-600 text-sm sm:text-xs hover:text-blue-600">Latest Products</button>
     </div>
-    <div id="product-grid" class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div id="product-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
       <!-- Product cards will be dynamically inserted here -->
     </div>
   </section>
@@ -319,8 +326,8 @@ i mean this
   <!-- More Stores Section -->
   <section class="container mx-auto px-4 py-8">
     <div class="flex justify-between items-center mb-4">
-      <h2 class="text-xl sm:text-2xl font-bold text-gray-800">More Stores</h2>
-      <a href="#" class="text-blue-600 hover:text-blue-800 text-sm sm:text-base flex items-center">
+      <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">More Stores</h2>
+      <a href="#" class="text-blue-600 hover:text-blue-800 text-sm sm:text-xs flex items-center">
         View All
         <i class='bx bx-chevron-right ml-1'></i>
       </a>
@@ -328,18 +335,18 @@ i mean this
     <div class="flex flex-wrap gap-4">
       <!-- Store Card 1 -->
       <div class="flex items-center space-x-3">
-        <img src="https://foremade.com/storage/app/public/shop/2025-04-20-6805038d4a235.webp" alt="Appfur Store" class="w-12 h-12 rounded-full object-cover">
+        <img src="https://foremade.com/storage/app/public/shop/2025-04-20-6805038d4a235.webp" alt="Appfur Store" class="w-10 sm:w-12 h-10 sm:h-12 rounded-full object-cover">
         <div>
-          <p class="text-sm text-gray-800 font-semibold">Appfur Store</p>
-          <p class="text-xs text-gray-600">0 Products</p>
+          <p class="text-sm sm:text-xs text-gray-800 font-semibold">Appfur Store</p>
+          <p class="text-xs sm:text-[0.65rem] text-gray-600">0 Products</p>
         </div>
       </div>
       <!-- Store Card 2 -->
       <div class="flex items-center space-x-3">
-        <img src="https://foremade.com/storage/app/public/shop/2025-04-15-67fe30f8566ee.webp" alt="Hynolyn Health Servi..." class="w-12 h-12 rounded-full object-cover">
+        <img src="https://foremade.com/storage/app/public/shop/2025-04-15-67fe30f8566ee.webp" alt="Hynolyn Health Servi..." class="w-10 sm:w-12 h-10 sm:h-12 rounded-full object-cover">
         <div>
-          <p class="text-sm text-gray-800 font-semibold">Hynolyn Health Servi...</p>
-          <p class="text-xs text-gray-600">5 Products</p>
+          <p class="text-sm sm:text-xs text-gray-800 font-semibold">Hynolyn Health Servi...</p>
+          <p class="text-xs sm:text-[0.65rem] text-gray-600">5 Products</p>
         </div>
       </div>
     </div>
@@ -348,7 +355,7 @@ i mean this
   <!-- Top Rated Products Section -->
   <section class="container mx-auto px-4 py-8">
     <div class="flex justify-between items-center mb-4">
-      <h2 class="text-xl sm:text-2xl font-bold text-gray-800">Top Rated Products</h2>
+      <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">Top Rated Products</h2>
       <div class="flex space-x-2">
         <button id="top-rated-prev" class="bg-gray-300 text-gray-800 p-2 rounded-full hover:bg-gray-400 disabled:bg-gray-200 disabled:cursor-not-allowed">
           <i class='bx bx-chevron-left'></i>
@@ -366,8 +373,8 @@ i mean this
   <!-- Health & Beauty Section -->
   <section class="container mx-auto px-4 py-8">
     <div class="flex justify-between items-center mb-4">
-      <h2 class="text-xl sm:text-2xl font-bold text-gray-800">Health & Beauty</h2>
-      <a href="#" class="text-blue-600 hover:text-blue-800 text-sm sm:text-base flex items-center">
+      <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">Health & Beauty</h2>
+      <a href="#" class="text-blue-600 hover:text-blue-800 text-sm sm:text-xs flex items-center">
         View All
         <i class='bx bx-chevron-right ml-1'></i>
       </a>
@@ -388,8 +395,8 @@ i mean this
   <!-- Home & Kitchen Section -->
   <section class="container mx-auto px-4 py-8">
     <div class="flex justify-between items-center mb-4">
-      <h2 class="text-xl sm:text-2xl font-bold text-gray-800">Home & Kitchen</h2>
-      <a href="#" class="text-blue-600 hover:text-blue-800 text-sm sm:text-base flex items-center">
+      <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">Home & Kitchen</h2>
+      <a href="#" class="text-blue-600 hover:text-blue-800 text-sm sm:text-xs flex items-center">
         View All
         <i class='bx bx-chevron-right ml-1'></i>
       </a>
@@ -410,8 +417,8 @@ i mean this
   <!-- Smart Watches Section -->
   <section class="container mx-auto px-4 py-8">
     <div class="flex justify-between items-center mb-4">
-      <h2 class="text-xl sm:text-2xl font-bold text-gray-800">Smart Watches</h2>
-      <a href="#" class="text-blue-600 hover:text-blue-800 text-sm sm:text-base flex items-center">
+      <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">Smart Watches</h2>
+      <a href="#" class="text-blue-600 hover:text-blue-800 text-sm sm:text-xs flex items-center">
         View All
         <i class='bx bx-chevron-right ml-1'></i>
       </a>
@@ -432,8 +439,8 @@ i mean this
   <!-- Electronics Section -->
   <section class="container mx-auto px-4 py-8">
     <div class="flex justify-between items-center mb-4">
-      <h2 class="text-xl sm:text-2xl font-bold text-gray-800">Electronics</h2>
-      <a href="#" class="text-blue-600 hover:text-blue-800 text-sm sm:text-base flex items-center">
+      <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">Electronics</h2>
+      <a href="#" class="text-blue-600 hover:text-blue-800 text-sm sm:text-xs flex items-center">
         View All
         <i class='bx bx-chevron-right ml-1'></i>
       </a>
@@ -453,26 +460,26 @@ i mean this
 
   <!-- Informational Row Section -->
   <section class="container mx-auto px-4 py-8">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
       <div class="flex flex-col items-center text-center">
-        <i class='bx bxs-truck text-3xl text-gray-600 mb-2'></i>
-        <p class="text-sm font-semibold text-gray-800">Fast Shipping</p>
-        <p class="text-xs text-gray-600">Fast shipping across the country</p>
+        <i class='bx bxs-truck text-2xl sm:text-3xl text-gray-600 mb-2'></i>
+        <p class="text-sm sm:text-xs font-semibold text-gray-800">Fast Shipping</p>
+        <p class="text-xs sm:text-[0.65rem] text-gray-600">Fast shipping across the country</p>
       </div>
       <div class="flex flex-col items-center text-center">
-        <i class='bx bx-leaf text-3xl text-gray-600 mb-2'></i>
-        <p class="text-sm font-semibold text-gray-800">Authentic Products</p>
-        <p class="text-xs text-gray-600">100% Authentic Products</p>
+        <i class='bx bx-leaf text-2xl sm:text-3xl text-gray-600 mb-2'></i>
+        <p class="text-sm sm:text-xs font-semibold text-gray-800">Authentic Products</p>
+        <p class="text-xs sm:text-[0.65rem] text-gray-600">100% Authentic Products</p>
       </div>
       <div class="flex flex-col items-center text-center">
-        <i class='bx bx-check-shield text-3xl text-gray-600 mb-2'></i>
-        <p class="text-sm font-semibold text-gray-800">100% Secure Payment</p>
-        <p class="text-xs text-gray-600">We Ensure Quality Transaction</p>
+        <i class='bx bx-check-shield text-2xl sm:text-3xl text-gray-600 mb-2'></i>
+        <p class="text-sm sm:text-xs font-semibold text-gray-800">100% Secure Payment</p>
+        <p class="text-xs sm:text-[0.65rem] text-gray-600">We Ensure Quality Transaction</p>
       </div>
       <div class="flex flex-col items-center text-center">
-        <i class='bx bx-headphone text-3xl text-gray-600 mb-2'></i>
-        <p class="text-sm font-semibold text-gray-800">24/7 Support Center</p>
-        <p class="text-xs text-gray-600">We Ensure Quality Support</p>
+        <i class='bx bx-headphone text-2xl sm:text-3xl text-gray-600 mb-2'></i>
+        <p class="text-sm sm:text-xs font-semibold text-gray-800">24/7 Support Center</p>
+        <p class="text-xs sm:text-[0.65rem] text-gray-600">We Ensure Quality Support</p>
       </div>
     </div>
   </section>
@@ -480,17 +487,17 @@ i mean this
   <!-- Footer Section -->
   <footer class="bg-gray-900 text-white py-8 relative">
     <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         <!-- First Column: Logo, Contact, Newsletter -->
         <div>
           <div class="mb-4">
             <img src="logo2.png" alt="Foremade Logo" class="h-8">
           </div>
-          <p class="text-sm mb-2">Nigeria</p>
-          <p class="text-sm mb-4">info@foremade.com</p>
+          <p class="text-sm sm:text-xs mb-2">Nigeria</p>
+          <p class="text-sm sm:text-xs mb-4">info@foremade.com</p>
           <div class="flex items-center mb-4">
             <i class='bx bx-phone text-sm mr-2'></i>
-            <span class="text-sm">Hotline +2349126866984</span>
+            <span class="text-sm sm:text-xs">Hotline +2349126866984</span>
           </div>
           <div class="flex space-x-4 mb-4">
             <a href="#" class="text-white hover:text-gray-400"><i class='bx bxl-twitter text-xl'></i></a>
@@ -498,22 +505,22 @@ i mean this
             <a href="#" class="text-white hover:text-gray-400"><i class='bx bxl-facebook text-xl'></i></a>
           </div>
           <div>
-            <h3 class="text-sm font-semibold mb-2">Newsletter</h3>
-            <p class="text-sm mb-4">Subscribe our newsletter to get latest updates</p>
-            <div class="flex space-x-2">
+            <h3 class="text-sm sm:text-xs font-semibold mb-2">Newsletter</h3>
+            <p class="text-sm sm:text-xs mb-4">Subscribe our newsletter to get latest updates</p>
+            <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
               <div class="relative flex-1">
-                <input type="email" placeholder="Enter your email" class="w-full border border-gray-300 rounded-full px-4 py-2 text-sm text-gray-800 focus:outline-none">
+                <input type="email" placeholder="Enter your email" class="w-full border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-xs text-gray-800 focus:outline-none">
                 <i class='bx bx-envelope absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600'></i>
               </div>
-              <button class="bg-white text-gray-800 px-4 py-2 rounded-full hover:bg-gray-200 text-sm">Submit</button>
+              <button class="bg-white text-gray-800 px-4 py-2 rounded-full hover:bg-gray-200 text-sm sm:text-xs">Submit</button>
             </div>
           </div>
         </div>
 
         <!-- Second Column: Accounts -->
         <div>
-          <h3 class="text-sm font-semibold mb-4">Accounts</h3>
-          <ul class="space-y-2 text-sm">
+          <h3 class="text-sm sm:text-xs font-semibold mb-4">Accounts</h3>
+          <ul class="space-y-2 text-sm sm:text-xs">
             <li><a href="#" class="hover:text-gray-400">Open Your Store</a></li>
             <li><a href="#" class="hover:text-gray-400">Profile</a></li>
             <li><a href="#" class="hover:text-gray-400">Track Order</a></li>
@@ -523,8 +530,8 @@ i mean this
 
         <!-- Third Column: Quick Links -->
         <div>
-          <h3 class="text-sm font-semibold mb-4">Quick Links</h3>
-          <ul class="space-y-2 text-sm">
+          <h3 class="text-sm sm:text-xs font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2 text-sm sm:text-xs">
             <li><a href="#" class="hover:text-gray-400">Featured Products</a></li>
             <li><a href="#" class="hover:text-gray-400">Top Stores</a></li>
             <li><a href="#" class="hover:text-gray-400">Latest Products</a></li>
@@ -534,8 +541,8 @@ i mean this
 
         <!-- Fourth Column: Other -->
         <div>
-          <h3 class="text-sm font-semibold mb-4">Other</h3>
-          <ul class="space-y-2 text-sm">
+          <h3 class="text-sm sm:text-xs font-semibold mb-4">Other</h3>
+          <ul class="space-y-2 text-sm sm:text-xs">
             <li><a href="#" class="hover:text-gray-400">About Company</a></li>
             <li><a href="#" class="hover:text-gray-400">Privacy Policy</a></li>
             <li><a href="#" class="hover:text-gray-400">Terms & Conditions</a></li>
@@ -548,7 +555,7 @@ i mean this
       </div>
 
       <!-- Copyright -->
-      <div class="mt-8 text-center text-sm">
+      <div class="mt-8 text-center text-sm sm:text-xs">
         <p>Copyright © 2019-2025 Foremade, Inc. All rights reserved.</p>
       </div>
     </div>
